@@ -1,0 +1,40 @@
+﻿@page
+@model BackendAuthProj.Pages.Jobs.ListModel
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Jobs List</h1>
+
+<form method="GET">
+    <div class="form-group">
+        <div class="input-group">
+            <input asp-for="SearchTerm" type="search" class="form-control"/>
+            <span class="input-group-btn">
+                <button asp-for="" class="btn btn-default">Search</button>
+            </span>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    @foreach (var job in Model.Jobs) {
+        <tr>
+            <td>@job.Id</td>
+            <td>@job.Title</td>
+            <td>@job.Department</td>
+            <td>
+                <a asp-page="./Details" asp-route-jobId="@job.Id" class="btn btn-sm">
+                    Details
+                </a>
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-jobId="@job.Id" class="btn btn-sm">
+                    Edit
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-page="./Edit" class="btn btn-primary">Create new Job Offer</a>
