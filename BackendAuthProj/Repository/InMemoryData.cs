@@ -28,12 +28,12 @@ namespace BackendAuthProj.Repository
             };
         }
 
-        public Job GetJobById(int id)
+        public Job GetElementById(int id)
         {
             return _jobs.SingleOrDefault(j => j.Id == id);
         }
 
-        public IEnumerable<Job> GetJobByTitle(string title)
+        public IEnumerable<Job> GetElementByTitle(string title)
         {
             return from j in _jobs
                    where string.IsNullOrEmpty(title) || j.Title.Contains(title)
@@ -41,7 +41,7 @@ namespace BackendAuthProj.Repository
                    select j;
         }
 
-        public Job UpdateJob(Job updatedJob)
+        public Job Update(Job updatedJob)
         {
             var job = _jobs.SingleOrDefault(j => j.Id == updatedJob.Id);
             if(job != null) {
@@ -53,10 +53,11 @@ namespace BackendAuthProj.Repository
             return job;
         }
 
-        public void CreateJob(Job createdJob)
+        public Job Create(Job createdJob)
         {
             createdJob.Id = _jobs.Max(j => j.Id) + 1;
             _jobs.Add(createdJob);
+            return createdJob;
         }
 
         public int Commit()
@@ -64,12 +65,7 @@ namespace BackendAuthProj.Repository
             return 0;
         }
 
-        Job IRepositoryData.CreateJob(Job createdJob)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Job DeleteJob(int id)
+        public Job Delete(int id)
         {
             var job = _jobs.FirstOrDefault(j => j.Id == id);
             if(job != null) {

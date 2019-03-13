@@ -39,7 +39,7 @@ namespace BackendAuthProj.Pages.Jobs
         {
             Department = htmlHelper.GetEnumSelectList<Department>();
             if(jobId.HasValue) {
-                Job = _RepositoryData.GetJobById(jobId.Value);
+                Job = _RepositoryData.GetElementById(jobId.Value);
 
             } else {
                 Job = new Job();
@@ -58,9 +58,9 @@ namespace BackendAuthProj.Pages.Jobs
             }
 
             if(Job.Id > 0) {
-                _RepositoryData.UpdateJob(Job);
+                _RepositoryData.Update(Job);
             } else {
-                _RepositoryData.CreateJob(Job);
+                _RepositoryData.Create(Job);
             }
             _RepositoryData.Commit();
             return RedirectToPage("./Details", new { jobId = Job.Id });

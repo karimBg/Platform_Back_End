@@ -28,7 +28,7 @@ namespace BackendAuthProj.Pages.Jobs
 
         public IActionResult OnGet()
         {
-            Jobs = _repositoryData.GetJobByTitle(SearchTerm);
+            Jobs = _repositoryData.GetElementByTitle(SearchTerm);
             return Page();
         }
     }

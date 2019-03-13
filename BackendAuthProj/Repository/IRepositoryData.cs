@@ -5,11 +5,11 @@ namespace BackendAuthProj.Repository
 {
     public interface IRepositoryData
     {
-        IEnumerable<Job> GetJobByTitle(string title);
-        Job GetJobById(int id);
-        Job UpdateJob(Job updatedJob);
-        Job CreateJob(Job createdJob);
-        Job DeleteJob(int id);
+        IEnumerable<Job> GetElementByTitle(string title);
+        Job GetElementById(int id);
+        Job Update(Job updatedJob);
+        Job Create(Job createdJob);
+        Job Delete(int id);
         int Commit();
     }
 }

@@ -22,7 +22,7 @@ namespace BackendAuthProj.Pages.Jobs
 
         public IActionResult OnGet(int jobId)
         {
-            Job = _RepositoryData.GetJobById(jobId);
+            Job = _RepositoryData.GetElementById(jobId);
             if(Job == null) {
                 return RedirectToPage("./NotFound");
             }

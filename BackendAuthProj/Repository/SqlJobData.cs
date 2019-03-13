@@ -26,7 +26,7 @@ namespace BackendAuthProj.Repository
         }
 
         // Create a New job offer.
-        public Job CreateJob(Job createdJob)
+        public Job Create(Job createdJob)
         {
             var user = GetCurrentUserId();
             createdJob.IdUserDb = user;
@@ -35,9 +35,9 @@ namespace BackendAuthProj.Repository
         }
 
         // Delete an existing job offer.
-        public Job DeleteJob(int id)
+        public Job Delete(int id)
         {
-            var job = GetJobById(id);
+            var job = GetElementById(id);
             if (job != null) {
                 _db.Jobs.Remove(job);
             }
@@ -48,7 +48,7 @@ namespace BackendAuthProj.Repository
          * Get all existing job offers inside the Db for a specific user.
          * Search for a specific job offer by title.
          */
-        public IEnumerable<Job> GetJobByTitle(string title)
+        public IEnumerable<Job> GetElementByTitle(string title)
         {
             var userId = GetCurrentUserId();
             var query = _db.Jobs.Where(j => j.IdUserDb == userId);
@@ -59,14 +59,15 @@ namespace BackendAuthProj.Repository
         }
 
         // Update an existing Job Offer.
-        public Job UpdateJob(Job updatedJob)
+        public Job Update(Job updatedJob)
         {
             var entity = _db.Jobs.Attach(updatedJob);
             entity.State = EntityState.Modified;
             return updatedJob;
         }
 
-        public Job GetJobById(int id)
+        // Get an existing Job element by it's Id.
+        public Job GetElementById(int id)
         {
             return _db.Jobs.Find(id);
         }
