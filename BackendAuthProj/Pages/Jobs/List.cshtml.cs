@@ -15,13 +15,13 @@ namespace BackendAuthProj.Pages.Jobs
     [Authorize]
     public class ListModel : PageModel
     {
-        private readonly IRepositoryData _repositoryData;
+        private readonly IJobRepository _repositoryData;
 
         public IEnumerable<Job> Jobs { get; set; }
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
-        public ListModel(IRepositoryData repositoryData)
+        public ListModel(IJobRepository repositoryData)
         {
             this._repositoryData = repositoryData;
         }

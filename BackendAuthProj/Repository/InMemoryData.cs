@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace BackendAuthProj.Repository
 {
-    public class InMemoryData : IRepositoryData
+    public class InMemoryData : IJobRepository
     {
         private readonly List<Job> _jobs;
 
@@ -72,6 +72,11 @@ namespace BackendAuthProj.Repository
                 _jobs.Remove(job);
             }
             return job;
+        }
+
+        public string GetCurrentUserId()
+        {
+            return null;
         }
     }
 }

@@ -14,25 +14,19 @@ namespace BackendAuthProj.Pages.Jobs
 {
     public class EditModel : PageModel
     {
-        private readonly IRepositoryData _RepositoryData;
+        private readonly IJobRepository _RepositoryData;
         private readonly IHtmlHelper htmlHelper;
-        private readonly UserManager<UserDb> _userManager;
-        private readonly SignInManager<UserDb> _signInManager;
 
         [BindProperty]
         public Job Job { get; set; }
 
         public IEnumerable<SelectListItem> Department { get; set; }
 
-        public EditModel(IRepositoryData repositoryData, 
-                         IHtmlHelper htmlHelper,
-                         UserManager<UserDb> userManager,
-                         SignInManager<UserDb> signInManager)
+        public EditModel(IJobRepository repositoryData, 
+                         IHtmlHelper htmlHelper)
         {
             _RepositoryData = repositoryData;
             this.htmlHelper = htmlHelper;
-            this._userManager = userManager;
-            this._signInManager = signInManager;
         }
 
         public IActionResult OnGet(int? jobId)

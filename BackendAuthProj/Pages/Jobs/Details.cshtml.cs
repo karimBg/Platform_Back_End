@@ -11,11 +11,11 @@ namespace BackendAuthProj.Pages.Jobs
 {
     public class DetailsModel : PageModel
     {
-        private readonly IRepositoryData _RepositoryData;
+        private readonly IJobRepository _RepositoryData;
 
         public Job Job { get; set; }
 
-        public DetailsModel(IRepositoryData repositoryData)
+        public DetailsModel(IJobRepository repositoryData)
         {
             _RepositoryData = repositoryData;
         }

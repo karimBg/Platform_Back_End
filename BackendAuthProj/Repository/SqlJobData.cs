@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace BackendAuthProj.Repository
 {
-    public class SqlJobData : IRepositoryData
+    public class SqlJobData : IJobRepository
     {
         private readonly AppDbContext _db;
         private readonly IHttpContextAccessor _httpContextAccessor;
