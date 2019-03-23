@@ -12,14 +12,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BackendAuthProj.Pages.Jobs
 {
-    [Authorize]
     public class ListModel : PageModel
     {
         private readonly IJobRepository _repositoryData;
 
         public IEnumerable<Job> Jobs { get; set; }
+
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
+
+        [TempData]
+        public string Message { get; set; }
 
         public ListModel(IJobRepository repositoryData)
         {

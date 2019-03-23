@@ -15,6 +15,9 @@ namespace BackendAuthProj.Pages.Jobs
 
         public Job Job { get; set; }
 
+        [TempData]
+        public string Message { get; set; }
+
         public DetailsModel(IJobRepository repositoryData)
         {
             _RepositoryData = repositoryData;

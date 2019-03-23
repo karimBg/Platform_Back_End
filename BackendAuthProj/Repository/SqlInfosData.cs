@@ -64,10 +64,10 @@ namespace BackendAuthProj.Repository
         {
             var userId = GetCurrentUserId();
             var query = _db.Infos.Where(i => i.IdUserDb == userId);
-            return from j in query
-                   where j.Location.Contains(location) || string.IsNullOrEmpty(location)
-                   orderby j.Id
-                   select j;
+            return from i in query
+                   where i.Location.Contains(location) || string.IsNullOrEmpty(location)
+                   orderby i.Id
+                   select i;
         }
     }
 }

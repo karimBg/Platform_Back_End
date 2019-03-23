@@ -6,35 +6,66 @@
 
 <h1>Jobs List</h1>
 
-<form method="GET">
+@if (Model.Message != null) {
+    <div class="alert alert-info">
+        @Model.Message
+    </div>
+}
+
+@*<form method="GET">
     <div class="form-group">
         <div class="input-group">
-            <input asp-for="SearchTerm" type="search" class="form-control"/>
+            <input asp-for="SearchTerm" type="search" class="form-control" placeholder="Search By Job Name" />
             <span class="input-group-btn">
                 <button asp-for="" class="btn btn-default">Search</button>
             </span>
         </div>
     </div>
-</form>
+</form>*@
 
-<table class="table">
-    @foreach (var job in Model.Jobs) {
+<p>
+    <a asp-page="./Edit" class="btn btn-primary">Create new Job Offer</a>
+</p>
+
+<table class="table" id="myTable">
+    <thead>
         <tr>
-            <td>@job.Id</td>
-            <td>@job.Title</td>
-            <td>@job.Department</td>
-            <td>
-                <a asp-page="./Details" asp-route-jobId="@job.Id" class="btn btn-sm">
-                    Details
-                </a>
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-jobId="@job.Id" class="btn btn-sm">
-                    Edit
-                </a>
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].ExpirationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Description)
+            </th>
+            <th></th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Jobs.ToList()) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpirationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-jobId="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-jobId="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-jobId="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
-
-<a asp-page="./Edit" class="btn btn-primary">Create new Job Offer</a>

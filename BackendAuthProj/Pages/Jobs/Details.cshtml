@@ -4,19 +4,62 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>@Model.Job.Title</h1>
-<div>
-    Id: @Model.Job.Id
-</div>
-<div>
-    Title: @Model.Job.Title
-</div>
+<h1>Details</h1>
+
+@*@if (Model.Message != null) {
+    <div class="alert alert-info">
+        @Model.Message
+    </div>
+}*@
 
 <div>
-    Description: @Model.Job.Description
+    <h4>GeneralInfo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.Department)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.Department)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.ExpirationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.ExpirationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.Description)
+        </dd>
+    </dl>
 </div>
 <div>
-    Expiration Date: @Model.Job.ExpirationDate
+    <a asp-page="./Edit" asp-route-jobId="@Model.Job.Id">Edit</a> |
+    <a asp-page="./List">Back to List</a>
 </div>
 
-<a asp-page="./List" class="btn btn-default">See All Jobs</a>
+@*<h1>@Model.Job.Title</h1>
+    <div>
+        Id: @Model.Job.Id
+    </div>
+    <div>
+        Title: @Model.Job.Title
+    </div>
+
+    <div>
+        Description: @Model.Job.Description
+    </div>
+    <div>
+        Expiration Date: @Model.Job.ExpirationDate
+    </div>
+
+    <a asp-page="./List" class="btn btn-default">See All Jobs</a>*@
