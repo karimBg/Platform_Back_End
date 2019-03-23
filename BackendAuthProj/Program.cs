@@ -12,6 +12,13 @@ namespace BackendAuthProj
 {
     public class Program
     {
+        /*
+         * TODO: Add Authorization for the Admin.
+         * TODO: Learn about Roles in .Net core.
+         * TODO: Add admin Area, wich contains a page for adding intents and entities.
+         */
+
+
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
