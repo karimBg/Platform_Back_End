@@ -19,18 +19,33 @@
             </div>
             <div class="form-group">
                 <label asp-for="Job.Description"></label>
-                <input asp-for="Job.Description" class="form-control" />
+                <textarea asp-for="Job.Description" class="form-control" />
                 <span asp-validation-for="Job.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Job.ExpirationDate"></label>
-                <input asp-for="Job.ExpirationDate" class="form-control" />
-                <span asp-validation-for="Job.ExpirationDate" class="text-danger"></span>
+                <label asp-for="Job.Responsibilities"></label>
+                <textarea asp-for="Job.Responsibilities" class="form-control" />
+                <span asp-validation-for="Job.Responsibilities" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Job.Department"></label>
-                <select class="form-control" asp-for="Job.Department" asp-items="Model.Department"></select>
-                <span asp-validation-for="Job.Department" class="text-danger"></span>
+                <label asp-for="Job.Qualification"></label>
+                <textarea asp-for="Job.Qualification" class="form-control" />
+                <span asp-validation-for="Job.Qualification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Job.ApplicationProcedure"></label>
+                <textarea asp-for="Job.ApplicationProcedure" class="form-control" />
+                <span asp-validation-for="Job.ApplicationProcedure" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Job.OpeningDate"></label>
+                <input asp-for="Job.OpeningDate" class="form-control" />
+                <span asp-validation-for="Job.OpeningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Job.ApplicationDeadline"></label>
+                <input asp-for="Job.ApplicationDeadline" class="form-control" />
+                <span asp-validation-for="Job.ApplicationDeadline" class="text-danger"></span>
             </div>
 
             <button type="submit" class="btn btn-primary">Save</button>

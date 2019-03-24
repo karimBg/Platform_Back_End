@@ -33,14 +33,23 @@
             <th>
                 @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Title)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Department)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].ExpirationDate)
-            </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Responsibilities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Qualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].ApplicationProcedure)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].OpeningDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].ApplicationDeadline)
             </th>
             <th></th>
         </tr>
@@ -51,14 +60,23 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Department)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ExpirationDate)
-                </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Responsibilities)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qualification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationProcedure)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.OpeningDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationDeadline)
                 </td>
                 <td>
                     <a asp-page="./Edit" asp-route-jobId="@item.Id">Edit</a> |
