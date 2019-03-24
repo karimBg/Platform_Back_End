@@ -11,14 +11,34 @@ namespace BackEndAuthProj.Models
     {
         public int Id { get; set; }
 
-        [Required, MinLength(5)]
+        [Required(ErrorMessage = "The Title is Required")]
+        [Display(Name = "Job Title")]
         public string Title { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Specify a Job Description")]
+        [Display(Name = "Job Description")]
+        [MinLength(25)]
         public string Description { get; set; }
 
-        public DateTime ExpirationDate { get; set; }
-        public Department Department { get; set; }
+        [Display(Name = "Job Responsibilities")]
+        public string Responsibilities { get; set; }
+
+        [Display(Name = "Required Qualifications")]
+        public string Qualification { get; set; }
+
+        [Required(ErrorMessage = "Specify an Application Procedure")]
+        [Display(Name = "Application Procedures")]
+        public string ApplicationProcedure { get; set; }
+
+        [Required(ErrorMessage = "Specify an Opening Date")]
+        [Display(Name = "Opening Date")]
+        [DataType(DataType.Date)]
+        public DateTime OpeningDate { get; set; }
+
+        [Required(ErrorMessage = "Specify an Application Deadline")]
+        [Display(Name = "Application Deadline")]
+        [DataType(DataType.Date)]
+        public DateTime ApplicationDeadline { get; set; }
 
         public string IdUserDb { get; set; }
     }
