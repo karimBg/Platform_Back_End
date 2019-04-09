@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendAuthProj", "BackendAuthProj\BackendAuthProj.csproj", "{3A806C44-9731-4878-80B1-EC10C96B2EE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A806C44-9731-4878-80B1-EC10C96B2EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A806C44-9731-4878-80B1-EC10C96B2EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A806C44-9731-4878-80B1-EC10C96B2EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A806C44-9731-4878-80B1-EC10C96B2EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8BBA173-7F57-46E7-BA73-2A7F6A525F21}
+	EndGlobalSection
+EndGlobal

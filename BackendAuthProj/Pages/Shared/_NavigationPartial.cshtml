@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using BackendAuthProj.Data
+@inject SignInManager<UserDb> SignInManager
+@inject UserManager<UserDb> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User)) {
+
+        <li class="nav-item">
+            <a asp-page="/Jobs/List" class="nav-link text-dark bg-light">Jobs</a>
+        </li>
+        <li class="nav-item">
+            <a asp-page="/GeneralInfos/Index" class="nav-link text-dark bg-light">General Infos</a>
+        </li>
+        <li class="nav-item">
+            <a asp-page="/Internships/Index" class="nav-link text-dark bg-light">Internships</a>
+        </li>
+    }
+</ul>

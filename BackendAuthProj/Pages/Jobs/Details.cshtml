@@ -1,0 +1,83 @@
+﻿@page "{jobId:int}"
+@model BackendAuthProj.Pages.Jobs.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+@*@if (Model.Message != null) {
+    <div class="alert alert-info">
+        @Model.Message
+    </div>
+}*@
+
+<div>
+    <h4>GeneralInfo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.Responsibilities)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.Responsibilities)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.Qualification)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.Qualification)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.ApplicationProcedure)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.ApplicationProcedure)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.OpeningDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.OpeningDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Job.ApplicationDeadline)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Job.ApplicationDeadline)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-jobId="@Model.Job.Id">Edit</a> |
+    <a asp-page="./List">Back to List</a>
+</div>
+
+@*<h1>@Model.Job.Title</h1>
+    <div>
+        Id: @Model.Job.Id
+    </div>
+    <div>
+        Title: @Model.Job.Title
+    </div>
+
+    <div>
+        Description: @Model.Job.Description
+    </div>
+    <div>
+        Expiration Date: @Model.Job.ExpirationDate
+    </div>
+
+    <a asp-page="./List" class="btn btn-default">See All Jobs</a>*@

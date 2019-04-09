@@ -1,0 +1,89 @@
+﻿@page
+@model BackendAuthProj.Pages.Jobs.ListModel
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Jobs List</h1>
+
+@if (Model.Message != null) {
+    <div class="alert alert-info">
+        @Model.Message
+    </div>
+}
+
+@*<form method="GET">
+    <div class="form-group">
+        <div class="input-group">
+            <input asp-for="SearchTerm" type="search" class="form-control" placeholder="Search By Job Name" />
+            <span class="input-group-btn">
+                <button asp-for="" class="btn btn-default">Search</button>
+            </span>
+        </div>
+    </div>
+</form>*@
+
+<p>
+    <a asp-page="./Edit" class="btn btn-primary">Create new Job Offer</a>
+</p>
+
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Title)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Responsibilities)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].Qualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].ApplicationProcedure)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].OpeningDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Jobs.ToList()[0].ApplicationDeadline)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Jobs.ToList()) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Responsibilities)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qualification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationProcedure)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.OpeningDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationDeadline)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-jobId="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-jobId="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-jobId="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

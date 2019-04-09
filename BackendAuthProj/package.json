@@ -1,0 +1,10 @@
+{
+    "version": "1.0.0",
+    "name": "asp.net",
+    "private": true,
+    "devDependencies": {},
+    "dependencies": {
+        "datatables.net": "^2.1.1",
+        "datatables.net-dt": "^2.1.1"
+    }
+}

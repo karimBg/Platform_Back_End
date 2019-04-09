@@ -1,0 +1,66 @@
+﻿@page
+@model BackendAuthProj.Pages.Internships.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Internship</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Internship.Id" />
+            <div class="form-group">
+                <label asp-for="Internship.Title" class="control-label"></label>
+                <input asp-for="Internship.Title" class="form-control" />
+                <span asp-validation-for="Internship.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Internship.Department" class="control-label"></label>
+                <select asp-for="Internship.Department" class="form-control"></select>
+                <span asp-validation-for="Internship.Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Internship.ExpirationDate" class="control-label"></label>
+                <input asp-for="Internship.ExpirationDate" class="form-control" />
+                <span asp-validation-for="Internship.ExpirationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Internship.Degree" class="control-label"></label>
+                <select asp-for="Internship.Degree" class="form-control"></select>
+                <span asp-validation-for="Internship.Degree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Internship.Period" class="control-label"></label>
+                <input asp-for="Internship.Period" class="form-control" />
+                <span asp-validation-for="Internship.Period" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Internship.Description" class="control-label"></label>
+                <input asp-for="Internship.Description" class="form-control" />
+                <span asp-validation-for="Internship.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Internship.IdUserDb" class="control-label"></label>
+                <input asp-for="Internship.IdUserDb" class="form-control" />
+                <span asp-validation-for="Internship.IdUserDb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

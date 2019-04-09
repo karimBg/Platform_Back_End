@@ -1,0 +1,44 @@
+﻿@page "{InfoId:int}"
+@model BackendAuthProj.Pages.GeneralInfos.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+@if(Model.Message != null) {
+    <div class="alert alert-info">
+        @Model.Message
+    </div>
+}
+
+<div>
+    <h4>GeneralInfo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GeneralInfo.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GeneralInfo.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GeneralInfo.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GeneralInfo.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GeneralInfo.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GeneralInfo.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.GeneralInfo.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
